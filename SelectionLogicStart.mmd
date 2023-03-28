@@ -1,0 +1,31 @@
+stateDiagram-v2
+state Beginning {
+state Level{
+  Parent --> z=1
+  z=1 --> clickable
+  state Position {
+  z=1 --> centre
+  }
+  ChildStack --> z=0
+   z=0 --> notClickable
+  state Position {
+   z=0 --> centre
+  }
+}
+}
+state FirstClick{
+P1 -->c1
+P1 -->c2
+P1 -->c3
+--
+state Position{
+c1 --> left
+c2 --> right
+c3 --> down
+}
+state State{
+c1 --> clickable
+c2 --> clickable
+c3 --> clickable
+}
+}
