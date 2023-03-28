@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+     
+   @return math.div($pixel, 16) + rem;
+  } @else {
+   @error 'Don\'t use units when using rem() function, only numbers';
+  }
+}
+
+@function em($pixel) {
+  @if math.is-unitless($pixel) {
+     
+   @return math.div($pixel, 16) + em;
+  } @else {
+   @error 'Don\'t use units when using em() function, only numbers';
+  }
+}
+
+/// Remove the unit of a length
+//  
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+ 
+  @return $number;
+}

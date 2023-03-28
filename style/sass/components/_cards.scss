@@ -1,0 +1,18 @@
+@use '../globals' as g;
+// @use '../util' as u;
+// @use '../layout' as l;
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: g.$card-S;
+  width: g.$card-S;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  margin: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}

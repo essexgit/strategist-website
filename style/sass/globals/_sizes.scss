@@ -1,0 +1,18 @@
+@use '../util' as u;
+@use 'sass:math';
+
+//min clamp size
+$mn-cpsz:6;
+//max clamp
+$mx-cpsz: 35;
+//default clamp size
+$df-cpsz: 30;
+//card (circle) size
+$card-S: clamp(($mn-cpsz) * 1rem,($df-cpsz) * 1vw, ($mx-cpsz) * 1vh);
+// diagonal vector sizes.
+$tran-min: math.sqrt(math.div(math.pow($mn-cpsz, 2),2));
+$tran-val: math.sqrt(math.div(math.pow($df-cpsz, 2),2));
+$tran-max: math.sqrt(math.div(math.pow($mx-cpsz, 2),2));
+//pass tranlate clamp through as positive,
+//  set units, turn negative with calc at compile
+$diag-tn-pos: clamp( ($tran-min) * 1rem, ($tran-val) * 1vw, ($tran-max) * 1vh);

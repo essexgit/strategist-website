@@ -1,0 +1,15 @@
+@use '../util' as u;
+h1,h2,h3, h4{
+  font-weight: 700;
+  // line-height: clamp(u.em(8), u.em(14) + 2vw, u.em(45));
+  font-size: clamp(u.rem(16), 4vw, 4vh);
+}
+
+p{
+  margin-top: 0;
+  font-size: u.rem(16);
+}
+
+a, a:visited, a:active{
+  text-decoration: none;
+}

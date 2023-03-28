@@ -1,0 +1,203 @@
+@use '../globals' as g;
+@use '../components' as c;
+@use '../layout' as l;
+@use '../util' as u;
+
+#strategy,
+.strategy,
+#diagnose,
+.diagnose,
+#problem,
+.problem,
+#new,
+.new,
+#what,
+.what,
+#research,
+.research,
+#questioning,
+.questioning,
+#tacit,
+.tacit,
+#beliefs,
+.beliefs,
+#framing,
+.framing,
+#systems,
+.systems,
+#busModCan,
+.busModCan,
+#channels,
+.channels {
+  z-index: 0;
+  background-color: green;
+  transition: transform 1s ease-in, opacity 1s ease-in;
+  opacity: 0;
+}
+
+#process,
+.process,
+#focus,
+.focus,
+#opportunity,
+.opportunity,
+#better,
+.better,
+#when,
+.when,
+#data,
+.data,
+#knowledge,
+.knowledge,
+#breadth,
+.breadth,
+#custJourney,
+.custJourney,
+#communications,
+.communications,
+#critical,
+.critical,
+#swot,
+.swot,
+#basics,
+.basics {
+  background-color: red;
+  transition: transform 1s ease-in, opacity 1s ease-in;
+  opacity: 0;
+}
+
+#tools,
+.tools,
+#plan,
+.plan,
+#barriers,
+.barriers,
+#stop,
+.stop,
+#how,
+.how,
+#gaps,
+.gaps,
+#depth,
+.depth,
+#challenging,
+.challenging,
+#assumptions,
+.assumptions,
+#thinking,
+.thinking,
+#creative,
+.creative,
+#porter,
+.porter,
+#succes,
+.succes {
+  background-color: blue;
+  transition: transform 1s ease-in, opacity 1s ease-in;
+  opacity: 0;
+}
+
+#strategist,
+#strategist,
+.strategist {
+  z-index: 1;
+
+  opacity: 1;
+}
+
+#strategist:hover {
+
+  #strategy,
+  .strategy,
+  #diagnose,
+  .diagnose,
+  #problem,
+  .problem,
+  #new,
+  .new,
+  #what,
+  .what,
+  #research,
+  .research,
+  #questioning,
+  .questioning,
+  #tacit,
+  .tacit,
+  #beliefs,
+  .beliefs,
+  #framing,
+  .framing,
+  #systems,
+  .systems,
+  #busModCan,
+  .busModCan,
+  #channels,
+  .channels {
+
+    opacity: 1;
+    transform: translate(g.$diag-tn-pos, calc(g.$diag-tn-pos * -1));
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+
+  #process,
+  .process,
+  #focus,
+  .focus,
+  #opportunity,
+  .opportunity,
+  #better,
+  .better,
+  #when,
+  .when,
+  #data,
+  .data,
+  #knowledge,
+  .knowledge,
+  #breadth,
+  .breadth,
+  #custJourney,
+  .custJourney,
+  #communications,
+  .communications,
+  #critical,
+  .critical,
+  #swot,
+  .swot,
+  #basics,
+  .basics {
+    opacity: 1;
+    transform: translateY(g.$card-S);
+    transition: transform 1s ease-out, background-color 1s ease-out;
+  }
+
+  #tools,
+  .tools,
+  #plan,
+  .plan,
+  #barriers,
+  .barriers,
+  #stop,
+  .stop,
+  #how,
+  .how,
+  #gaps,
+  .gaps,
+  #depth,
+  .depth,
+  #challenging,
+  .challenging,
+  #assumptions,
+  .assumptions,
+  #thinking,
+  .thinking,
+  #creative,
+  .creative,
+  #porter,
+  .porter,
+  #succes,
+  .succes {
+    opacity: 1;
+    transform: translate(calc(g.$diag-tn-pos * -1), calc(g.$diag-tn-pos * -1));
+    transition: transform 1s ease-out, background-color 1s ease-out;
+  }
+}
