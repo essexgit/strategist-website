@@ -76,9 +76,12 @@ body {
   height: 100vh;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 700;
-  font-size: clamp(1rem, 4vw, 4vh);
+  font-size: clamp(0.875rem, 4vw, 4vh);
 }
 
 p {
@@ -86,7 +89,9 @@ p {
   font-size: 1rem;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   text-decoration: none;
 }
 
@@ -300,14 +305,14 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   margin: auto;
-  flex-direction: column-reverse;
-  border-radius: 50%;
   padding: 0;
   margin-block: 0;
   margin-inline: 0;
   padding-inline: 0;
+  flex-direction: column;
+  border-radius: 50%;
 }
 
 .card {
@@ -318,55 +323,51 @@ li {
   width: clamp(6rem, 30vw, 35vh);
   border-radius: 50%;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   color: white;
   margin: auto;
   overflow-wrap: break-word;
   hyphens: auto;
 }
 
-#strategy,
 .strategy {
   z-index: 0;
   transition: transform 1s ease-in, opacity 1s ease-in;
   opacity: 0;
 }
 
-#process,
 .process {
   transition: transform 1s ease-in, opacity 1s ease-in;
   opacity: 0;
 }
 
-#tools,
 .tools {
   transition: transform 1s ease-in, opacity 1s ease-in;
   opacity: 0;
 }
 
 #strategist,
-#strategist,
 .strategist {
   z-index: 1;
   opacity: 1;
 }
 
-#strategist:hover #strategy,
-#strategist:hover .strategy {
-  opacity: 1;
-  transform: translate(clamp(4.2426406871rem, 21.2132034356vw, 24.7487373415vh), calc(clamp(4.2426406871rem, 21.2132034356vw, 24.7487373415vh) * -1));
-  transition: transform 1s ease-out, opacity 1s ease-out;
-}
-#strategist:hover #process,
-#strategist:hover .process {
-  opacity: 1;
-  transform: translateY(clamp(6rem, 30vw, 35vh));
-  transition: transform 1s ease-out, background-color 1s ease-out;
-}
-#strategist:hover #tools,
-#strategist:hover .tools {
+#strategist:hover .strategy,
+.strategist:hover .strategy {
   opacity: 1;
   transform: translate(calc(clamp(4.2426406871rem, 21.2132034356vw, 24.7487373415vh) * -1), calc(clamp(4.2426406871rem, 21.2132034356vw, 24.7487373415vh) * -1));
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+#strategist:hover .process,
+.strategist:hover .process {
+  opacity: 1;
+  transform: translate(clamp(4.2426406871rem, 21.2132034356vw, 24.7487373415vh), calc(clamp(4.2426406871rem, 21.2132034356vw, 24.7487373415vh) * -1));
+  transition: transform 1s ease-out, background-color 1s ease-out;
+}
+#strategist:hover .tools,
+.strategist:hover .tools {
+  opacity: 1;
+  transform: translateY(clamp(6rem, 30vw, 35vh));
   transition: transform 1s ease-out, background-color 1s ease-out;
 }
 

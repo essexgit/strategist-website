@@ -1,6 +1,4 @@
 @use '../globals' as g;
-// @use '../util' as u;
-// @use '../layout' as l;
 
 .card {
   display: flex;
@@ -10,7 +8,7 @@
   width: g.$card-S;
   border-radius: 50%;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   color: white;
   margin: auto;
   overflow-wrap: break-word;
