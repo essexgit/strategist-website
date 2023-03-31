@@ -1,31 +1,99 @@
-stateDiagram-v2
-state Beginning {
-state Level{
-  Parent --> z=1
-  z=1 --> clickable
-  state Position {
-  z=1 --> centre
-  }
-  ChildStack --> z=0
-   z=0 --> notClickable
-  state Position {
-   z=0 --> centre
-  }
+%%{init: { "theme": "forest" } }%%
+classDiagram 
+  Root --|> RootHovered: Function Hover
+  Root <|-- RootHovered: Function Hover Off
+  Root ..|> Level2Moved: Function Hover
+  Level2 <|.. RootHovered: Function Hover Off
+  Level2Moved <|-- Level2Clicked: Function Click
+  Level3Moved <|-- Level3Clicked: Function Click
+  Level2Moved --|> Level2Clicked: Function Click
+  Level2Clicked ..|> RootHovered: Function Click
+  Level2Clicked ..|> Level3: Function Click
+  Level2Moved --|> Level2Sibling: Function Click
+  Level3Moved --|> Level3Clicked: Function Click
+  Level3Moved --|> Level3Sibling: Function Click
+  RootHovered ..|> Level2Moved: Function Click
+  RootHovered --|> RootCovered: Function Click
+  Level2Moved ..|> Level3Moved: Function Click
+  Level2Clicked ..|> Level3Moved: Function Click
+  Level3Moved ..|> Level4Moved: Function Click
+  Level3Moved ..|> Level4: Function Click
+ class Level2{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+class Root{
+   +position centre
+   +clickable yes
+   +hoverable yes
+   +height high   
 }
+ class Level2Moved{
+ +position movedOut
+ +clickable Yes
+ +hoverable yes
+ +height low 
+ }
+ class Level3Moved{
+ +position movedOut
+ +clickable Yes
+ +hoverable yes
+ +height low 
 }
-state FirstClick{
-P1 -->c1
-P1 -->c2
-P1 -->c3
---
-state Position{
-c1 --> left
-c2 --> right
-c3 --> down
+ class RootHovered{
+ +position centre
+ +clickable Yes
+ +hoverable yes
+ +height high 
+ }
+ class RootCovered{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+ class Level3{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low
 }
-state State{
-c1 --> clickable
-c2 --> clickable
-c3 --> clickable
+class Level2Clicked{
++position centre
+ +clickable yes
+ +hoverable yes
+ +height high 
+ }
+class Level2Sibling{
++position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+class Level3Sibling{
++position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+class Level3Clicked{
++position centre
+ +clickable yes
+ +hoverable yes
+ +height high 
 }
+
+ class Level4{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low 
+}
+ class Level4Moved{
+ +position movedOut
+ +clickable no
+ +hoverable yes
+ +height low 
 }
