@@ -1,0 +1,99 @@
+%%{init: { "theme": "forest" } }%%
+classDiagram 
+  Root --|> RootHovered: Function Hover
+  Root <|-- RootHovered: Function Hover Off
+  Root ..|> Level2Moved: Function Hover
+  Level2 <|.. RootHovered: Function Hover Off
+  Level2Moved <|-- Level2Clicked: Function Click
+  Level3Moved <|-- Level3Clicked: Function Click
+  Level2Moved --|> Level2Clicked: Function Click
+  Level2Clicked ..|> RootHovered: Function Click
+  Level2Clicked ..|> Level3: Function Click
+  Level2Moved --|> Level2Sibling: Function Click
+  Level3Moved --|> Level3Clicked: Function Click
+  Level3Moved --|> Level3Sibling: Function Click
+  RootHovered ..|> Level2Moved: Function Click
+  RootHovered --|> RootCovered: Function Click
+  Level2Moved ..|> Level3Moved: Function Click
+  Level2Clicked ..|> Level3Moved: Function Click
+  Level3Moved ..|> Level4Moved: Function Click
+  Level3Moved ..|> Level4: Function Click
+ class Level2{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+class Root{
+   +position centre
+   +clickable yes
+   +hoverable yes
+   +height high   
+}
+ class Level2Moved{
+ +position movedOut
+ +clickable Yes
+ +hoverable yes
+ +height low 
+ }
+ class Level3Moved{
+ +position movedOut
+ +clickable Yes
+ +hoverable yes
+ +height low 
+}
+ class RootHovered{
+ +position centre
+ +clickable Yes
+ +hoverable yes
+ +height high 
+ }
+ class RootCovered{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+ class Level3{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low
+}
+class Level2Clicked{
++position centre
+ +clickable yes
+ +hoverable yes
+ +height high 
+ }
+class Level2Sibling{
++position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+class Level3Sibling{
++position centre
+ +clickable no
+ +hoverable no
+ +height low 
+ }
+class Level3Clicked{
++position centre
+ +clickable yes
+ +hoverable yes
+ +height high 
+}
+
+ class Level4{
+ +position centre
+ +clickable no
+ +hoverable no
+ +height low 
+}
+ class Level4Moved{
+ +position movedOut
+ +clickable no
+ +hoverable yes
+ +height low 
+}

@@ -9,6 +9,11 @@ Use the package manager [npm](https://nodejs.org/en/download) to install Strateg
 ```bash
 npm install Strategist
 ```
+To run sass and update styling changes run the following from the root directory:
+
+```bash
+sass ./style/sass/style.scss ./style/css/style.css --watch
+```
 
 ## Usage
 
